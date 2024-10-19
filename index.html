@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Adoption pathways</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <!-- nav section start -->
+        <nav>
+            <div class="w-11/12 mx-auto py-4 flex justify-between text-center items-center">
+                <div class="flex gap-2  items-center">                 
+                  <img class="h-[20px]" src="./images/logo.webp" alt="">
+                  <h2 class="text-3xl font-bold">Peddy</h2>
+                </div>
+                  
+                <div class="navbar-center md:mx-auto hidden md:block lg:block  lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li><a>Home</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>Contact</a></li>
+                  </ul>
+                </div>
+                
+                <div role="button" class="dropdown opacity-100">
+                   <div tabindex="0"  role="button" class="btn btn-ghost md:hidden lg:hidden"> 
+                     <i class="fa-solid fa-bars"></i> 
+                 </div> 
+                <div class="navbar-center flex">
+                  <ul tabindex="0" class=" menu px-1 menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow right-0 gap-4">
+                    <li><a>Home</a></li>
+                    <li><a>Shop</a></li>
+                    <li><a>Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+                <div class="shadow-sm border-2 border-green-50 rounded-full px-3 py-2 hidden md:block lg:block">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+              </div>
+        </nav>
+        <!-- nav section end -->
+         <!-- banner section start -->
+          <section>
+            <div class="text-center py-8 space-y-4 mx-auto">
+            <div class="space-y-5">
+              <h3 class="text-xl text-gray-500 font-semibold">Bringing Families Together ❤️‍🔥</h3>
+                <h1 class="text-5xl font-bold">Your Path to Adoption<br> Starts Here</h1>
+                 <p class="text-gray-500">Animal adoption starts with choosing a rescue organization or shelter and researching the type of pat that suits your lifestyle.<br> The process typication, meeting the animal, and undergoing a home check. With proper care and attention, adoption not only<br> saves lives but also brings immense joy to both the animal and the adopter.</p>
+          </div>
+            <div>
+              <a href="#main-section">
+                <button class="btn bg-teal-700 text-white">View More</button>
+              </a>
+            </div>
+          </div>
+             <div class="flex items-center justify-center">
+                <img src="./images/pet.webp" alt="">
+              </div>
+          </section>
+          <!-- banner section end -->
+    </header>
+    <main id="main-section" class="w-11/12 mx-auto">
+      <!-- main header section start -->
+      <div class="text-center space-y-4 py-16">
+        <h2 class="text-2xl font-bold">Adopt  Your  Best Friend</h2>
+        <p class="text-gray-500">Adopt your best friend today and give a loving home to an animal in need. By adopting, you're not only gaining a loyal<br> companion but also saving a life. Every adoption makes a difference and brings happiness to both<br> the animal and the adopter.</p>
+      </div>
+      <!-- main header section end -->
+       <!-- 4 button section start -->
+       <div id="categories" class="flex flex-col md:flex-row justify-between gap-3 py-3">
+
+       </div>
+       <!-- 4 button end -->
+
+        <!-- loading spinner -->
+         <div id="spinner" class="text-center">
+           <span class="loading loading-infinity loading-lg"></span> 
+
+         </div>
+        <!-- sort by price button and text start -->
+         <div class="flex items-center justify-between">
+          <h2 class="text-xl font-semibold">Best Deal For you</h2>
+          <div>
+            <button id="sort" class="btn text-white bg-teal-700" onclick="sortSection()">Sort by Price</button>
+          </div>
+         </div>
+         <!-- sort by price button and text end -->
+          <!-- Adopt best friend card section start -->
+          <div class="grid md:grid-cols-5 gap-4 mt-5">
+            <!-- 3 daynamic card -->
+            <div class="col-span-4">
+               <div id="card" class="grid md:grid-cols-2 lg:grid-cols-3">
+
+               </div>
+            </div>
+             <!-- show image -->
+          <div class="col-span-1">
+            <div id="imgCard" class="grid grid-cols-2 mt-4 gap-2 p-3 shadow-md rounded-lg border border-2 border-gray-200">
+
+            </div>
+           </div>
+            
+             <!-- error section -->
+              <div>
+                
+              </div>
+              <div class="hidden" id="error">
+                  
+              </div>
+          </div>
+         
+           <!-- </section> -->
+           <!-- Adopt best friend card section end -->
+    </main>
+
+    <!-- Open the modal using ID.showModal() method -->
+<button id="modalData" class="btn hidden" onclick="petModal.showModal()">open modal</button>
+<dialog id="petModal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="modal-content">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn w-full">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<!-- adopt button modal -->
+
+<!-- Open the modal using ID.showModal() method -->
+<button class="btn hidden" onclick="">open modal</button>
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box text-center flex flex-col items-center justify-center">
+   
+      <img src=images/img.jpg class="h-20 w-20" alt="" />
+      <h2 class="text-2xl font-bold">Congrates</h2>
+      <p>Adoption Process is Start For your Pet</p>
+         <p><span id="count" class="text-4xl font-bold">3</span></p>
+   
+    
+  </div>
+</dialog>
+
+        <footer class="footer mt-20 bg-black text-base-content p-10 flex justify-center items-center md:flex-row flex-col md:justify-around mx-auto">
+          <nav>
+            <div class="text-white flex items-center gap-3">
+              <img class="h-[20px]" src="./images/logo.webp" alt="">
+                  <h2 class="text-3xl font-bold">Peddy</h2>
+            </div>
+            <div class="text-gray-300 flex flex-col">
+              <a class="link link-hover"> Location: av. Washington 165, NY CA 54003</a>
+            <a class="link link-hover">Phone: +31 85 964 47 25</a>
+            <a class="link link-hover">Email: info@yourdomain.com</a>
+            <a class="link link-hover">Openings hours: 9.00 AM - 5.00 PM</a>
+            </div>
+            <div>
+              <a class="facebook text-[#1877F2]" href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+              <a class="twitter text-white" href="https://x.com/?lang=en"><i class="fa-brands fa-x-twitter"></i></a>
+              <a class="youtube text-red-600" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+              <a class="instagram text-[#D82D7E]" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </nav>
+          <nav>
+            <div class=>
+              <h6 class="text-white text-xl font-medium">Useful Links</h6>
+            </div>
+            <div class="text-gray-400 flex flex-col">
+              <a class="link link-hover">Home</a>
+            <a class="link link-hover">About Us</a>
+            <a class="link link-hover">Animals</a>
+            <a class="link link-hover">Foundation</a>
+            <a class="link link-hover">Contact</a>
+            </div>
+          </nav>
+          
+          <nav>
+            <h6 class="text-white text-xl font-medium">Drop a Message</h6>
+              <div class="flex flex-col space-y-4">
+                <input
+                  type="text"
+                  placeholder="Enter your email"
+                  class="bg-slate-800 input" />
+                <button class="btn border-none outline-none bg-teal-700 text-white">Subscribe</button>
+              </div>
+            
+          </nav>
+        </footer>
+
+   
+  <script src="index.js"></script> 
+</body>
+</html>
+ 
